@@ -1,3 +1,12 @@
 package exercicio03;
 
-// TODO: implemente o código-fonte de Medicamento.java
+public class Medicamento {
+
+    private int codigoId;
+    private String nome;
+    private double preco;
+
+
+
+        }
+

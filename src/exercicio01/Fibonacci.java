@@ -1,27 +1,30 @@
 package exercicio01;
 
+import java.util.ArrayList;
 import java.util.Set;
 import java.util.TreeSet;
 
 public class Fibonacci {
 
-    /**
-     * Retorna um array contendo uma sequencia de números inteiros de Fibonacci.
-     *
-     * A sequencia de Fibonacci é aquela em que o valor do próximo número é igual a soma dos dois números
-     * anteriores, começando por 1 e 2.
-     *
-     * Ex.:
-     * Uma sequência Fibonacci de tamanho 10:
-     *
-     * 1, 2, 3, 5, 8, 13, 21, 34, 55, 89
-     *
-     * @param tamanho Tamanho da sequencia de números de Fibonacci a ser retornada.
-     * @return int[]
-     */
-    public int[] getSequenciaFibonacciDe(int tamanho) {
-        // TODO: implemente o código deste método
-        return null;
-    }
+    private static int[] vetAux = new int[50];
+    private static int k;
 
+    public int[] getSequenciaFibonacciDe(int n) {
+            k = 1; // inicializa k
+            return sequencia(n);
+        }
+
+        private static long sequencia(int n) {
+            if (n < 0) {
+                return vetAux[0];
+            } else {
+                if (k < 3) {
+                    vetAux[n] = k - 1;
+                    k++;
+                } else {
+                    vetAux[n] = vetAux[n + 1] + vetAux[n + 2];
+                }
+                return sequencia(n - 1);
+            }
+        }
 }
